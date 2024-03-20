@@ -9,6 +9,8 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
     <script src="https://unpkg.com/vue@next" defer></script>
     <script src="app.js" defer></script>
   </head>
@@ -19,15 +21,15 @@
     <section id="assignment">
       <h2>Event Practice</h2>
       <!-- 1) Show an alert (any text of your choice) when the button is pressed -->
-      <button>Show Alert</button>
+      <button v-on:click="showAlert()">Show Alert</button>
       <hr />
       <!-- 2) Register the user input on "keydown" and output it in the paragraph (hint: event.target.value helps) -->
-      <input type="text" />
-      <p>OUTPUT</p>
+      <input v-on:keydown="onKeyChange()" type="text" />
+      <p>{{ name }}</p>
       <hr />
       <!-- 3) Repeat 2) but only output the entered value if the ENTER key was pressed -->
-      <input type="text" />
-      <p>OUTPUT</p>
+      <input v-on:keydown.enter="onKeyChange()" type="text" />
+      <p>{{ name }}</p>
     </section>
   </body>
 </html>
