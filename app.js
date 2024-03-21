@@ -1,16 +1,22 @@
 const app = Vue.createApp({
     data() {
         return {
-            name: ''
+            name: '',
+            name2: ''
         }
     },
     methods: {
         showAlert() {
             alert('Wellcome!')
         },
-        onKeyChange(e) {
-            console.log(e);
-            this.name = e.target.value;
+        onKeyChange(event) {
+            console.log(event);
+            this.name = event.target.value;
+        },
+
+        onKeyChange2(event) {
+            console.log(event);
+            this.name2 = event.target.value;
         }
     }
 });
